@@ -1,4 +1,4 @@
-package com.dti.backend;
+package com.dti.backend.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -42,9 +42,5 @@ public class Student {
     @DecimalMin("0.0")
     @DecimalMax("100.0")
     private double attendance;
-
-    public double getAverageGrade() {
-        return (grade1 + grade2 + grade3 + grade4 + grade5) / 5.0;
-    }
 }
 

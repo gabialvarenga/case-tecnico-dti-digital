@@ -1,8 +1,10 @@
-package com.dti.backend;
+package com.dti.backend.controller;
 
 import com.dti.backend.dto.ClassReportResponse;
 import com.dti.backend.dto.StudentRequest;
 import com.dti.backend.dto.StudentResponse;
+import com.dti.backend.service.IStudentService;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,13 +13,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/students")
 @CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class StudentController {
 
-    private final StudentService studentService;
+    private final IStudentService studentService;
 
     @PostMapping
     public ResponseEntity<StudentResponse> addStudent(@RequestBody @Valid StudentRequest request) {
