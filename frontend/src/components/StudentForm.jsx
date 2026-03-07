@@ -125,7 +125,7 @@ function StudentForm({ student, onClose }) {
           <div className="grades-grid">
             {[1, 2, 3, 4, 5].map((num) => (
               <div key={num} className="form-group">
-                <label htmlFor={`grade${num}`}>Nota {num} *</label>
+                <label htmlFor={`grade${num}`}>Disciplina {num} *</label>
                 <input
                   id={`grade${num}`}
                   name={`grade${num}`}

@@ -91,11 +91,11 @@ function StudentList() {
             <thead>
               <tr>
                 <th>Nome</th>
-                <th>Nota 1</th>
-                <th>Nota 2</th>
-                <th>Nota 3</th>
-                <th>Nota 4</th>
-                <th>Nota 5</th>
+                <th>Disciplina 1</th>
+                <th>Disciplina 2</th>
+                <th>Disciplina 3</th>
+                <th>Disciplina 4</th>
+                <th>Disciplina 5</th>
                 <th>Média</th>
                 <th>Frequência</th>
                 <th>Ações</th>
