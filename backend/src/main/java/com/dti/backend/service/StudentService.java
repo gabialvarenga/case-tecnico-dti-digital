@@ -74,21 +74,17 @@ public class StudentService implements IStudentService {
             return new ClassReportResponse(List.of(), 0, 0, 0, 0, 0, List.of(), List.of());
         }
 
-        // Calculate subject averages
         double subjectAvg1 = gradeCalculatorService.calculateSubjectAverage(students, 1);
         double subjectAvg2 = gradeCalculatorService.calculateSubjectAverage(students, 2);
         double subjectAvg3 = gradeCalculatorService.calculateSubjectAverage(students, 3);
         double subjectAvg4 = gradeCalculatorService.calculateSubjectAverage(students, 4);
         double subjectAvg5 = gradeCalculatorService.calculateSubjectAverage(students, 5);
 
-        // Calculate class average
         double classAverage = gradeCalculatorService.calculateClassAverage(students);
 
-        // Get students statistics
         List<String> studentsAboveClassAverage = gradeCalculatorService.getStudentsAboveAverage(students, classAverage);
         List<String> studentsBelowAttendanceThreshold = gradeCalculatorService.getStudentsBelowAttendanceThreshold(students);
 
-        // Map students to response DTOs
         List<StudentResponse> studentResponses = students.stream()
                 .map(student -> {
                     double avgGrade = gradeCalculatorService.calculateAverageGrade(student);
