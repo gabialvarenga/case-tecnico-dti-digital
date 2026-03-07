@@ -1,5 +1,8 @@
-const API_URL = 'http://localhost:8080/api/students';
-const AUTH_URL = 'http://localhost:8080/api/auth';
+const BASE_URL = import.meta.env.VITE_API_URL;
+//const BASE_URL = 'http://localhost:8080';
+
+const API_URL = `${BASE_URL}/api/students`;
+const AUTH_URL = `${BASE_URL}/api/auth`;
 
 export const api = {
   // Autenticação
