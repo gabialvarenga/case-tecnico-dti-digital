@@ -1,0 +1,227 @@
+.class-report {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.report-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.report-header h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.report-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.report-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.report-section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.subject-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.subject-number {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.subject-average {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.stat-value.green {
+  color: #48bb78;
+}
+
+.stat-value.orange {
+  color: #ed8936;
+}
+
+.names-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.name-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.green-list .name-badge {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.orange-list .name-badge {
+  background: #fbd38d;
+  color: #7c2d12;
+}
+
+.students-performance {
+  display: grid;
+  gap: 16px;
+}
+
+.performance-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.performance-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.performance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.performance-header h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.performance-header .badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.performance-header .badge.success {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.performance-header .badge.warning {
+  background: #fef5e7;
+  color: #975a16;
+}
+
+.performance-header .badge.danger {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.performance-grades {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grade-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.grade-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.grade-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.attendance-item .grade-value.good {
+  color: #48bb78;
+}
+
+.attendance-item .grade-value.bad {
+  color: #ed8936;
+}
+
+.report-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px 20px;
+}
+
+.report-empty .empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.report-empty h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.report-empty p {
+  color: #666;
+  font-size: 14px;
+}
