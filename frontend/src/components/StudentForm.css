@@ -45,13 +45,13 @@
   padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
 }
 
 .form-group label {
@@ -80,21 +80,32 @@
 
 .error-message {
   color: #e53e3e;
-  font-size: 12px;
+  font-size: 10px;
   margin-top: 4px;
 }
 
 .grades-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.grades-grid .form-group input {
+  padding: 10px 8px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .grades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .form-actions {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .btn-cancel,
