@@ -1,36 +1,8 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 const API_URL = `${BASE_URL}/api/students`;
-const AUTH_URL = `${BASE_URL}/api/auth`;
 
 export const api = {
-  // Autenticação
-  register: async (username, password) => {
-    const response = await fetch(`${AUTH_URL}/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || 'Erro ao registrar usuário');
-    }
-    return response.json();
-  },
-
-  login: async (username, password) => {
-    const response = await fetch(`${AUTH_URL}/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || 'Erro ao fazer login');
-    }
-    return response.json();
-  },
-
   // Listar todos os alunos
   getAllStudents: async () => {
     const response = await fetch(API_URL);
