@@ -14,8 +14,8 @@
 
 ### Demonstração Online
 
-✨ **[ACESSE O FRONTEND](https://case-dti-frontend.onrender.com)**
-🔌 **[API BACKEND](https://case-dti-backend.onrender.com)**
+- **[ACESSE O FRONTEND](https://case-dti-frontend.onrender.com)**
+- **[API BACKEND](https://case-dti-backend.onrender.com)**
 
 > *A aplicação está hospedada no Render (plano gratuito). O primeiro acesso pode demorar alguns segundos enquanto o servidor "acorda", mas funciona normalmente logo em seguida.*
 
