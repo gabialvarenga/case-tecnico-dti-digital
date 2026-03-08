@@ -8,6 +8,8 @@ function StudentList() {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortOption, setSortOption] = useState('none');
 
   useEffect(() => {
     loadStudents();
@@ -46,6 +48,14 @@ function StudentList() {
     setShowForm(false);
     setEditingStudent(null);
     loadStudents();
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
   };
 
   const getGradeColor = (grade) => {
@@ -87,6 +97,21 @@ function StudentList() {
         </div>
       ) : (
         <div className="table-container">
+          <div className="list-controls">
+            <input
+              type="text"
+              placeholder="Buscar por nome..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="search-input"
+            />
+
+            <select value={sortOption} onChange={handleSortChange} className="sort-select">
+              <option value="none">Ordenar: Nenhum</option>
+              <option value="highest">Ordenar: Maior média</option>
+              <option value="lowest">Ordenar: Menor média</option>
+            </select>
+          </div>
           <table className="students-table">
             <thead>
               <tr>
@@ -102,7 +127,14 @@ function StudentList() {
               </tr>
             </thead>
             <tbody>
-              {students.map((student) => (
+              {students
+                .filter((s) => s.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                .sort((a, b) => {
+                  if (sortOption === 'highest') return b.averageGrade - a.averageGrade;
+                  if (sortOption === 'lowest') return a.averageGrade - b.averageGrade;
+                  return 0;
+                })
+                .map((student) => (
                 <tr key={student.id}>
                   <td className="student-name">{student.name}</td>
                   <td>{student.grade1.toFixed(1)}</td>
