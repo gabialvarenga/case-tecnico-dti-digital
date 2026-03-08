@@ -1,4 +1,4 @@
-# 📚 Sistema de Gestão Escolar
+# Sistema de Gestão Escolar
 
 **Desafio Técnico DTI Digital** — Sistema completo para gerenciamento de alunos, notas e frequência, com interface moderna, validação robusta e relatório automático da turma.
 
@@ -375,8 +375,10 @@ cd backend
 1. **Frequência aceita decimal** — o campo suporta `double` de 0 a 100, como `75.5`.
 2. **"Acima da média"** usa comparação estritamente maior (`>`): média **igual** à da turma **não** entra na lista.
 3. **"Abaixo de 75%"** usa comparação estritamente menor (`<`): frequência exatamente 75% **não** gera alerta.
-4. **Banco em memória (H2)** — foi utilizado para simplificar a execução do projeto. Os dados são reiniciados quando o backend é reiniciado.
+4. **Banco em memória (H2)** — foi utilizado para simplificar a execução e avaliação do projeto. Os dados são reiniciados sempre que o backend é reiniciado.
 5. **Cinco disciplinas fixas** — o enunciado define exatamente cinco disciplinas; quantidade dinâmica não foi implementada.
+6. **O sistema foi desenvolvido considerando apenas um professor utilizando a aplicação.**
+7. **Não foi implementado sistema de autenticação, pois o foco do projeto é o gerenciamento de notas e frequência dos alunos.**
 
 ---
 
