@@ -71,8 +71,7 @@ O sistema deve:
 
 | Funcionalidade | Descrição |
 |---|---|
-| 🔐 Autenticação | Cadastro e login de professor com validação de campos |
-| 📝 CRUD de Alunos | Cadastrar, editar, visualizar e excluir alunos |
+|  CRUD de Alunos | Cadastrar, editar, visualizar e excluir alunos |
 | 📊 Relatório da Turma | Médias por disciplina, alunos acima da média e abaixo de 75% de frequência |
 | 🏠 Dashboard | Visão geral com totais e indicadores rápidos |
 | 🔍 Busca por Nome | Filtro em tempo real pelo nome do aluno |
@@ -116,25 +115,19 @@ O backend segue o padrão **MVC adaptado para REST** com aplicação consistente
 ```
 backend/src/main/java/com/dti/backend/
 ├── controller/              # Camada de apresentação — recebe e responde requisições HTTP
-│   ├── AuthController.java
 │   └── StudentController.java
 ├── service/                 # Camada de negócio — regras e orquestração
 │   ├── IStudentService.java          (interface — DIP)
 │   ├── StudentService.java           (implementação)
-│   ├── GradeCalculatorService.java   (SRP — cálculos isolados)
-│   └── UserService.java
+│   └── GradeCalculatorService.java   (SRP — cálculos isolados)
 ├── repository/              # Camada de persistência — acesso ao banco via JPA
-│   ├── StudentRepository.java
-│   └── UserRepository.java
+│   └── StudentRepository.java
 ├── entity/                  # Modelos de domínio mapeados no banco
-│   ├── Student.java
-│   └── User.java
+│   └── Student.java
 ├── dto/                     # Objetos de transferência de dados (entrada/saída da API)
 │   ├── StudentRequest.java
 │   ├── StudentResponse.java
-│   ├── ClassReportResponse.java
-│   ├── UserRequest.java
-│   └── UserResponse.java
+│   └── ClassReportResponse.java
 ├── mapper/                  # Conversão entre entidades e DTOs (SRP)
 │   └── StudentMapper.java
 ├── exception/               # Tratamento centralizado de erros (SRP)
@@ -160,7 +153,7 @@ backend/src/main/java/com/dti/backend/
 Frontend (React)
      │ HTTP JSON
      ▼
-AuthController / StudentController    ← Bean Validation na entrada
+StudentController    ← Bean Validation na entrada
      │
      ▼
 IStudentService (Interface — DIP)
@@ -177,7 +170,6 @@ StudentService
 ```
 frontend/src/
 ├── components/
-│   ├── Login.jsx / Login.css           # Autenticação (login + cadastro)
 │   ├── Dashboard.jsx / Dashboard.css   # Painel inicial com indicadores
 │   ├── StudentList.jsx / StudentList.css  # Listagem com busca e ordenação
 │   ├── StudentForm.jsx / StudentForm.css  # Formulário de cadastro/edição
@@ -242,13 +234,6 @@ cd backend
 ---
 
 ## 📡 Endpoints da API
-
-### Autenticação
-
-| Método | Rota | Descrição | Status |
-|---|---|---|---|
-| `POST` | `/api/auth/register` | Cadastrar professor | 201 / 400 |
-| `POST` | `/api/auth/login` | Fazer login | 200 / 401 |
 
 ### Alunos
 
@@ -340,8 +325,6 @@ curl -X DELETE https://case-dti-backend.onrender.com/api/students/1
 ### 1. Acesso
 
 - Acesse `http://localhost:5173` (local) ou a [demonstração online](https://case-dti-frontend.onrender.com)
-- Crie uma conta clicando em **"Não tem conta? Cadastre-se"**
-- Faça login com seu usuário e senha
 
 ### 2. Cadastrar Aluno
 
@@ -379,7 +362,6 @@ Testes unitários com **JUnit 5 + Mockito** cobrindo a camada de serviço:
 | Classe de Teste | Cenários cobertos |
 |---|---|
 | `StudentServiceTest` | Adicionar, buscar por ID, listar todos, atualizar, excluir e gerar relatório |
-| `UserServiceTest` | Registrar usuário e login com senha incorreta |
 
 ```bash
 cd backend
@@ -394,9 +376,7 @@ cd backend
 2. **"Acima da média"** usa comparação estritamente maior (`>`): média **igual** à da turma **não** entra na lista.
 3. **"Abaixo de 75%"** usa comparação estritamente menor (`<`): frequência exatamente 75% **não** gera alerta.
 4. **Banco em memória (H2)** — foi utilizado para simplificar a execução do projeto. Os dados são reiniciados quando o backend é reiniciado.
-5. **Autenticação simples** — sem JWT; o backend valida as credenciais e retorna os dados do usuário; o frontend controla o estado de sessão via React state. Adequado para o escopo do case.
-6. **Sem segmentação por professor** — qualquer usuário autenticado vê e gerencia todos os alunos.
-7. **Cinco disciplinas fixas** — o enunciado define exatamente cinco disciplinas; quantidade dinâmica não foi implementada.
+5. **Cinco disciplinas fixas** — o enunciado define exatamente cinco disciplinas; quantidade dinâmica não foi implementada.
 
 ---
 
